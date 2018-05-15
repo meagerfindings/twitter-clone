@@ -1,25 +1,12 @@
-import React from "react";
+import Tweet from "./Tweet"
 
 export default class TweetList extends React.Component {
     render() {
+        let tweets = this.props.tweets.map(tweet => <Tweet key={tweet.id} {...tweet} />);
         return (
             <div>
                 <ul className="collection">
-                    <li className="collection-item avatar">
-                        <i className="material-icons circle">person_pin</i>
-                        <span className="title">Tweeter's Name</span>
-                        <p>My #FirstTweet</p>
-                    </li>
-                    <li className="collection-item avatar">
-                        <i className="material-icons circle">person_pin</i>
-                        <span className="title">Tweeter's Name</span>
-                        <p>My #FirstTweet</p>
-                    </li>
-                    <li className="collection-item avatar">
-                        <i className="material-icons circle">person_pin</i>
-                        <span className="title">Tweeter's Name</span>
-                        <p>My #FirstTweet</p>
-                    </li>
+                    {tweets}
                 </ul>
             </div>
         )
